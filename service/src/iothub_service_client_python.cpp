@@ -855,7 +855,7 @@ public:
 
     IoTHubRegistryManager(
         IoTHubServiceClientAuth iothubAuth
-        )
+        ) : _iothubServiceClientAuthHandle(NULL), _iothubRegistryManagerHandle(NULL)
     {
         ScopedGILRelease release;
         PlatformCallHandler::Platform_Init();
@@ -1276,7 +1276,11 @@ public:
 
     IoTHubMessaging(
         IoTHubServiceClientAuth iothubAuth
-        )
+        ) : _iothubServiceClientAuthHandle(NULL),
+			_iothubMessagingHandle(NULL),
+			openCompleteContext(NULL),
+			sendCompleteContext(NULL),
+			feedbackMessageContext(NULL)
     {
         ScopedGILRelease release;
         PlatformCallHandler::Platform_Init();
@@ -1472,7 +1476,8 @@ public:
 
     IoTHubDeviceMethod(
         IoTHubServiceClientAuth iothubAuth
-        )
+        ) : _iothubServiceClientAuthHandle(NULL),
+			_iothubDeviceMethodHandle(NULL)
     {
         ScopedGILRelease release;
         PlatformCallHandler::Platform_Init();
@@ -1618,7 +1623,8 @@ public:
 
     IoTHubDeviceTwin(
         IoTHubServiceClientAuth iothubAuth
-        )
+        ) : _iothubServiceClientAuthHandle(NULL),
+			_iothubDeviceTwinHandle(NULL)
     {
         ScopedGILRelease release;
         PlatformCallHandler::Platform_Init();
