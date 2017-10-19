@@ -37,7 +37,10 @@ Ensure that the desired Python version is installed (2.7.x, 3.4.x or 3.5.x). Run
 ### Installs needed to compile the SDKs for Python from souce code
 Because the Azure IoT SDKs for Python are wrappers on top of the [SDKs for C][azure-iot-sdk-c], you will need to compile the C libraries if you want or need to generate the Python libraries from source code.
 You will notice that the C SDKs are brought in as submodules to the current repository.
-In order to setup your development environment to build the C binaries make sure all dependencies are installed before building the SDK. 
+In order to setup your development environment to build the C binaries make sure all dependencies are installed before building the SDK:
+```
+git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git
+```
 
 - For Ubuntu, you can use apt-get to install the right packages:
   ```
